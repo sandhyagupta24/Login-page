@@ -1,0 +1,272 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+</head>
+<body>
+    
+    <div class="signbox">
+        <h1>Sign-Up</h1>
+        <form>
+            <label>First Name</label>
+            <input type="text" placeholder="name">
+
+            <label>Last Name</label>
+            <input type="text" placeholder="surname">
+
+            <label>Email I'D</label>
+            <input type="email" placeholder="email i'd/phone number">
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" id="password">
+
+            <br><br>
+
+            <label>Show Password</label>
+            <input type="checkbox" onclick="togglePassword()">
+
+            <label>Confirm Password</label>
+            <input type="password" placeholder="confirm password" id="confirmPassword">
+            
+            <br><br>
+            <a href="http://127.0.0.1:5500/clone.html">
+            <input type="button" value="Submit">
+        </a>
+        </form>
+
+        <p>By clicking the Sign-up button, you agree to our <br>
+        <a href="http://127.0.0.1:5500/Term%20&%20conditions.html">Terms and Conditions</a> and <a href="http://127.0.0.1:5500/Privacy%20&%20policy.html">Privacy Policy</a>
+        </p>
+    </div>
+
+    <p class="para-2">Already have an account? <a href="http://127.0.0.1:5500/login.html">Login here</a></p>
+
+    <script type="text/javascript">
+        function togglePassword() {
+            var password = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirmPassword');
+            if (password.type === 'password') {
+                password.type = 'text';
+                confirmPassword.type = 'text';
+            } else {
+                password.type = 'password';
+                confirmPassword.type = 'password';
+            }
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    body {
+        background-color: #315296;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .signbox {
+        width: 360px;
+        height: 720px;
+        margin: auto;
+        background-color: white;
+        border-radius: 3px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    form {
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    form label {
+        display: flex;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border: 1px solid gray;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    input[type="button"] {
+        width: 320px;
+        height: 35px;
+        margin-top: 20px;
+        border: none;
+        background-color: #0fa680;
+        color: white;
+        font-size: 18px;
+    }
+
+    p {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 15px;
+    }
+
+    .para-2 {
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .para-2 a {
+        color: #49c1a2;
+    }
+</style> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+</head>
+<body>
+    
+    <div class="signbox">
+        <h1>Sign-Up</h1>
+        <form id="signupForm" onsubmit="return validateForm()">
+            <label>First Name</label>
+            <input type="text" id="firstName" placeholder="First Name">
+
+            <label>Last Name</label>
+            <input type="text" id="lastName" placeholder="Last Name">
+
+            <label>Email ID</label>
+            <input type="email" id="email" placeholder="Email ID/Phone Number">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <br><br>
+
+            <label>Show Password</label>
+            <input type="checkbox" onclick="togglePassword()">
+
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            
+            <br><br>
+            <input type="button" value="Submit">
+        </form>
+
+        <p>By clicking the Sign-up button, you agree to our <br>
+        <a href="http://127.0.0.1:5500/Term%20&%20conditions.html">Terms and Conditions</a> and <a href="http://127.0.0.1:5500/Privacy%20&%20policy.html">Privacy Policy</a>
+        </p>
+    </div>
+
+    <p class="para-2">Already have an account? <a href="http://127.0.0.1:5500/login.html">Login here</a></p>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (firstName.trim() === '' || lastName.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+                alert('Please fill in all details.');
+                return false;
+            } else if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            
+            return true;
+        }
+
+        function togglePassword() {
+            var password = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirmPassword');
+            if (password.type === 'password') {
+                password.type = 'text';
+                confirmPassword.type = 'text';
+            } else {
+                password.type = 'password';
+                confirmPassword.type = 'password';
+            }
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    body {
+        background-color: #315296;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .signbox {
+        width: 360px;
+        height: 720px;
+        margin: auto;
+        background-color: white;
+        border-radius: 3px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    form {
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    form label {
+        display: flex;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border: 1px solid gray;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    input[type="button"] {
+        width: 320px;
+        height: 35px;
+        margin-top: 20px;
+        border: none;
+        background-color: #0fa680;
+        color: white;
+        font-size: 18px;
+    }
+
+    p {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 15px;
+    }
+
+    .para-2 {
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .para-2 a {
+        color: #49c1a2;
+    }
+</style>
